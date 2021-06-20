@@ -9,7 +9,6 @@ import { setMovie } from "../features/movie/movieSlice";
 
 function Home() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     db.collection("movies").onSnapshot((snapshot) => {
       let tempMovie = snapshot.docs.map((doc) => {
@@ -18,6 +17,7 @@ function Home() {
       dispatch(setMovie(tempMovie));
     });
   }, []);
+
   return (
     <Container>
       <ImgSlider />

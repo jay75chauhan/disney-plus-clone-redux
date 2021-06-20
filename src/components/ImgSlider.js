@@ -71,6 +71,9 @@ const Wrap = styled.div`
     transition-duration: 300ms;
 
     &:hover {
+      padding: 0;
+
+      transition-duration: 300ms;
       border: 4px solid rgba(249, 249, 249, 0.8);
     }
   }
