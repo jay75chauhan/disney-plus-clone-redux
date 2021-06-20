@@ -1,22 +1,21 @@
 import styled from "styled-components";
+import { selectMovie } from "../features/movie/movieSlice";
+import { useSelector } from "react-redux";
 
 function Movies() {
+  const movies = useSelector(selectMovie);
+  console.log(movies);
+
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
-        <Wrap>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmFTveWZRkETncwiF9uB9jK6XjALPQD5Ybw&usqp=CAU" />
-        </Wrap>
-        <Wrap>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmFTveWZRkETncwiF9uB9jK6XjALPQD5Ybw&usqp=CAU" />
-        </Wrap>
-        <Wrap>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmFTveWZRkETncwiF9uB9jK6XjALPQD5Ybw&usqp=CAU" />
-        </Wrap>
-        <Wrap>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmFTveWZRkETncwiF9uB9jK6XjALPQD5Ybw&usqp=CAU" />
-        </Wrap>
+        {movies &&
+          movies.map((movie) => (
+            <Wrap key={movie.id}>
+              <img src={movie.cardImg} />
+            </Wrap>
+          ))}
       </Content>
     </Container>
   );
@@ -30,6 +29,8 @@ const Content = styled.div`
   display: grid;
   grid-gap: 25px;
   cursor: pointer;
+  padding: 10px;
+  overflow: hidden;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 `;
 

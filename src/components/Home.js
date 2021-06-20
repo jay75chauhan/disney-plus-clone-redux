@@ -2,8 +2,22 @@ import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
 import Movies from "./Movies";
 import Viewers from "./Viewers";
+import { useEffect } from "react";
+import db from "../firebase";
+import { useDispatch } from "react-redux";
+import { setMovie } from "../features/movie/movieSlice";
 
 function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    db.collection("movies").onSnapshot((snapshot) => {
+      let tempMovie = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      dispatch(setMovie(tempMovie));
+    });
+  }, []);
   return (
     <Container>
       <ImgSlider />
