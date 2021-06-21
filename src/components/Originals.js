@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectOriginal } from "../features/movie/movieSlice";
-
+import Fade from "react-reveal/Fade";
 const Originals = () => {
   const movies = useSelector(selectOriginal);
 
@@ -12,12 +12,14 @@ const Originals = () => {
       <Content>
         {movies &&
           movies.map((movie, key) => (
-            <Wrap key={key}>
-              {movie.id}
-              <Link to={`/detail/` + movie.id}>
-                <img src={movie.cardImg} alt={movie.title} />
-              </Link>
-            </Wrap>
+            <Fade top>
+              <Wrap key={key}>
+                {movie.id}
+                <Link to={`/detail/` + movie.id}>
+                  <img src={movie.cardImg} alt={movie.title} />
+                </Link>
+              </Wrap>
+            </Fade>
           ))}
       </Content>
     </Container>
