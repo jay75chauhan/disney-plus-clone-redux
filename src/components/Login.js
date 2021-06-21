@@ -1,17 +1,22 @@
 import styled from "styled-components";
-
+import LightSpeed from "react-reveal/LightSpeed";
 function Login() {
   return (
     <Container>
       <CTA>
         <CTALogoOne src="/images/cta-logo-one.svg" />
-        <SingUp>GET ALL THERE</SingUp>
-        <Description>
-          Disney+ is the home for your favorite movies and TV shows from Disney,
-          Pixar, Marvel, Star Wars, and National Geographic. Sign up for Disney+
-          and start ...
-        </Description>
 
+        <SingUp>GET ALL THERE</SingUp>
+        <LightSpeed left>
+          <Description>
+            Disney+HotStar is for your favorite movies and TV shows from Disney,
+            for learning purposes I am created this clone{" "}
+            <a href="https://github.com/jay75chauhan" target="_blank">
+              🔥jayChauhan🔥
+            </a>{" "}
+            ...
+          </Description>
+        </LightSpeed>
         <CTALogoTwo src="/images/cta-logo-two.png" />
       </CTA>
     </Container>
@@ -80,6 +85,14 @@ const Description = styled.p`
   letter-spacing: 1.5px;
   text-align: center;
   line-height: 1.5;
+
+  a {
+    font-size: 15px;
+    :hover {
+      color: red;
+      text-decoration: underline;
+    }
+  }
 `;
 
 const CTALogoTwo = styled.img`

@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectRecommend } from "../features/movie/movieSlice";
 
-const Recommends = (props) => {
+const Recommends = () => {
   const movies = useSelector(selectRecommend);
   console.log(movies, ":🛢️");
 
   return (
     <Container>
       <h4>Recommended for You</h4>
+
       <Content>
         {movies &&
           movies.map((movie, key) => (

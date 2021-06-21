@@ -9,6 +9,7 @@ const NewDisney = () => {
   return (
     <Container>
       <h4>New to Disney+</h4>
+
       <Content>
         {movies &&
           movies.map((movie, key) => (
