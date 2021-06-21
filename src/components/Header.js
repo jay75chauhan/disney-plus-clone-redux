@@ -33,8 +33,8 @@ function Header() {
     });
   }, []);
 
-  const signIn = () => {
-    auth.signInWithPopup(provider).then((result) => {
+  const signIn = async () => {
+    await auth.signInWithPopup(provider).then((result) => {
       let user = result.user;
       dispatch(
         setUserLogin({
