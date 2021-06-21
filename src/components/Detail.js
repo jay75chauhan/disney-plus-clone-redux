@@ -84,7 +84,7 @@ const Background = styled.div`
     width: 100vw;
     height: 100vh;
     @media (max-width: 768px) {
-      object-fit: cover;
+      object-fit: center;
     }
   }
 `;
