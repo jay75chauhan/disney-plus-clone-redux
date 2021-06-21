@@ -27,6 +27,8 @@ function Header() {
           })
         );
         history.push("/");
+      } else {
+        history.push("/login");
       }
     });
   }, []);
@@ -41,7 +43,6 @@ function Header() {
           photo: user.photoURL,
         })
       );
-      history.push("/");
     });
   };
 
