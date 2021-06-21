@@ -11,7 +11,7 @@ import db from "../firebase";
 import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
 
-const Home = (props) => {
+const Home = () => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
   let recommends = [];
@@ -78,7 +78,7 @@ const Container = styled.main`
       no-repeat fixed;
     content: "";
     position: absolute;
-    inset: 0px;
+
     opacity: 1;
     z-index: -1;
   }

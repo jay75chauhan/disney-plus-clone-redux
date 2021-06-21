@@ -35,3 +35,15 @@ a {
     font-size: 14px;
   }
 }
+::-webkit-scrollbar {
+  background: #040714;
+
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
